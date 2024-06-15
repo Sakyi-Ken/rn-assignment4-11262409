@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Text, TextInput, Button, KeyboardAvoidingView, StyleSheet} from "react-native";
+import {Text, TextInput, TouchableOpacity,KeyboardAvoidingView, View, StyleSheet, Image} from "react-native";
 
 export default function Login() {
   const [userName, onChangeUsername] = useState("");
@@ -15,6 +15,7 @@ export default function Login() {
         userName={userName}
         onChangeText={onChangeUsername} 
         placeholder="Name"
+        placeholderTextColor={"gray"}
         keyboardType="default"
       />
       <TextInput
@@ -23,9 +24,36 @@ export default function Login() {
         onChangeText={onChangeEmail}
         secureTextEntry={true}
         placeholder="Email"
+        placeholderTextColor={"gray"}
         keyboardType="email-address"
       />
-      <Button title="Log in" style={loginStyles.loginButton}></Button>
+      <TouchableOpacity style={loginStyles.loginButton} >
+        <Text style={loginStyles.buttonText}>Log in</Text>
+      </TouchableOpacity>
+
+      <View style={loginStyles.loginTexts}>
+        <View style={loginStyles.line}/>
+        <Text style={loginStyles.loginText}>     Or continue with    </Text>
+        <View style={loginStyles.line}/>
+      </View>
+
+      <View style={loginStyles.socialLogin}>
+        <TouchableOpacity>
+          <Image source={require('../assets/Group 56.png')}/>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image source={require('../assets/Group 55.png')}/>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Image source={require('../assets/Group 54.png')}/>
+        </TouchableOpacity>
+      </View>
+
+      <Text style={{marginTop: 20, textAlign: "center", color: "gray"}}>Don't have an account? <Text style={{color:  "#356899"}}>Register</Text>
+      </Text>
+
     </KeyboardAvoidingView>
   )        
 }
@@ -34,40 +62,66 @@ const loginStyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 80,
+    width: "125%",
   },
   headName: {
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: "bold",
     marginBottom: 10,
     color: "#356899"
   },
   greet: {
     fontSize: 35,
-    width: 200,
     fontWeight: "bold",
     color: "#0D0D26",
-    marginBottom: 20,
+    marginBottom: 15,
   },
   headText: {
     marginBottom: 50,
-    color: "fffff",
-    fontWeight: "thin"
+    color: "gray",
+    fontWeight: "100",
+    fontSize: 18,
   },
   inputName: {
     borderColor: 'gray',
     borderWidth: 1,
-    marginBottom: 10,
-    padding: 10,
+    marginBottom: 15,
+    padding: 15,
     borderRadius: 8,
-    fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 17,
   },
   loginButton: {
+    marginTop: 25,
     backgroundColor: "#356899",
     color: "#fff",
-    padding: 20,
-    borderRadius: 6,
-    fontWeight: "bold",
+    padding: 15,
+    borderRadius: 5,
     fontSize: 16,
-  }
-})
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 20,
+  },
+  loginTexts: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 60,
+    marginHorizontal: 5
+  },
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: 'gray',
+  },
+  loginText: {
+    color: 'gray',
+  },
+  socialLogin: { 
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    marginTop: 5
+  },
+});
