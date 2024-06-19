@@ -39,15 +39,15 @@ export default function Login() {
 
       <View style={loginStyles.socialLogin}>
         <TouchableOpacity>
-          <Image source={require('../assets/Group 56.png')}/>
+          <Image source={require('../assets/apple.png')}/>
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Image source={require('../assets/Group 55.png')}/>
+          <Image source={require('../assets/google.png')}/>
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Image source={require('../assets/Group 54.png')}/>
+          <Image source={require('../assets/facebook.png')}/>
         </TouchableOpacity>
       </View>
 
@@ -65,7 +65,7 @@ const loginStyles = StyleSheet.create({
     width: "125%",
   },
   headName: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
     color: "#356899"
@@ -79,6 +79,7 @@ const loginStyles = StyleSheet.create({
   headText: {
     marginBottom: 50,
     color: "gray",
+    opacity: 0.6,
     fontWeight: "100",
     fontSize: 18,
   },
