@@ -1,28 +1,28 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, TextInput, ScrollView, TouchableOpacity} from 'react-native';
+import { View, Text, Image, StyleSheet, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 //import {SearchBar} from 'react-native-elements';
 import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function HomePage() {
   return (
-    <View>
+    <View style={headStyles.homeContainer}>
       <View style={headStyles.headDetails}>
         <View style={headStyles.headText}>
           <Text style={headStyles.headName}>Sakyi Ken</Text>
           <Text style={headStyles.headEmail}>sakyiken7@gmail.com</Text>
-        </View>  
-        <Image source={require('../assets/profile.png')}/>
+        </View>
+        <Image source={require('../assets/profile.png')} style={headStyles.headImage} />
       </View>
       <View style={headStyles.headContainer}>
-        <View style={headStyles.headSearch}> 
-          <Icon style={headStyles.searchIcon} name="search" size={20} color="gray"/>
+        <View style={headStyles.headSearch}>
+          <Icon style={headStyles.searchIcon} name="search" size={20} color="gray" />
           <TextInput style={headStyles.searchBar}
-            placeholder= "Search a job or position"
+            placeholder="Search a job or position"
             placeholderTextColor={"gray"}
           />
         </View>
         <TouchableOpacity style={headStyles.headFilter}>
-          <Image source={require('../assets/filter.5.png')} style={headStyles.filterImage}/>
+          <Image source={require('../assets/filter.5.png')} style={headStyles.filterImage} />
         </TouchableOpacity>
       </View>
 
@@ -36,32 +36,113 @@ export default function HomePage() {
         <Text style={headStyles.headSee}>See all</Text>
       </View>
 
-      <ScrollView >
-        <View style={headStyles.cardContainer}>
-          <View style={headStyles.jobTitle}>
-            <Text>Software Engineer</Text>
-            <Text style={headStyles.social}>Facebook</Text>
+      <ScrollView horizontal={true} indicatorStyle={'white'}>
+        <View style={headStyles.jobContainer}>
+          <View style={headStyles.cardContainer}>
+            <View style={headStyles.imageContainer}>
+              <Image source={require('../assets/Vector.png')} style={headStyles.socialImage} />
+            </View>
+            <View style={headStyles.jobTitle}>
+              <Text style={headStyles.jobName}>Software Engineer</Text>
+              <Text style={headStyles.social}>Facebook</Text>
+            </View>
           </View>
-          <View style={headStyles.socialImage}></View>
+          <View style={headStyles.jobDetails}>
+            <Text style={headStyles.jobDetail}>$180,00</Text>
+            <Text style={headStyles.jobDetail}>Accra, Ghana</Text>
+          </View>
         </View>
-        <View style={headStyles.jobDetails}>
-          <Text>$180,00</Text>
-          <Text>Accra, Ghana</Text>
+
+        <View style={headStyles.jobContainer}>
+          <View style={headStyles.cardContainer}>
+            <View style={headStyles.googleContainer}>
+              <Image source={require('../assets/google.png')} style={headStyles.googleImage} />
+            </View>
+            <View style={headStyles.jobTitle}>
+              <Text style={headStyles.jobName}>Software Engineer</Text>
+              <Text style={headStyles.social}>Facebook</Text>
+            </View>
+          </View>
+          <View style={headStyles.jobDetails}>
+            <Text style={headStyles.jobDetail}>$180,00</Text>
+            <Text style={headStyles.jobDetail}>Accra, Ghana</Text>
+          </View>
+        </View>
+
+        <View style={headStyles.jobContainer}>
+          <View style={headStyles.cardContainer}>
+            <View style={headStyles.imageContainer}>
+              <Image source={require('../assets/Vector.png')} style={headStyles.socialImage} />
+            </View>
+            <View style={headStyles.jobTitle}>
+              <Text style={headStyles.jobName}>Software Engineer</Text>
+              <Text style={headStyles.social}>Facebook</Text>
+            </View>
+          </View>
+          <View style={headStyles.jobDetails}>
+            <Text style={headStyles.jobDetail}>$180,00</Text>
+            <Text style={headStyles.jobDetail}>Accra, Ghana</Text>
+          </View>
         </View>
       </ScrollView>
 
-     <View style={headStyles.headJobs}>
-        <Text style={headStyles.headTitle}>Featured Jobs</Text>
+      <View style={headStyles.headJobs}>
+        <Text style={headStyles.headTitle}>Popular Jobs</Text>
         <Text style={headStyles.headSee}>See all</Text>
       </View>
+
+      <ScrollView>
+        <View style={headStyles.popularHeadJobs}>
+          <Image source={require('../assets/Group.png')} />
+          <View style={headStyles.popularJobs}>
+            <View style={headStyles.popularHeadText}>
+              <Text Style={headStyles.popularHeadName}>Jr Executive</Text>
+              <Text style={headStyles.popularName}>Burger King</Text>
+            </View>
+            <View style={headStyles.popularHeadDetails}>
+              <Text style={headStyles.popularNameText}>$96,000/y</Text>
+              <Text style={headStyles.popularName}>Los Angels, US</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={headStyles.popularHeadJobs}>
+          <Image source={require('../assets/Group.png')} />
+          <View style={headStyles.popularJobs}>
+            <View style={headStyles.popularHeadText}>
+              <Text Style={headStyles.popularHeadName}>Jr Executive</Text>
+              <Text style={headStyles.popularName}>Burger King</Text>
+            </View>
+            <View style={headStyles.popularHeadDetails}>
+              <Text style={headStyles.popularNameText}>$96,000/y</Text>
+              <Text style={headStyles.popularName}>Los Angels, US</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={headStyles.popularHeadJobs}>
+          <Image source={require('../assets/Group.png')} />
+          <View style={headStyles.popularJobs}>
+            <View style={headStyles.popularHeadText}>
+              <Text Style={headStyles.popularHeadName}>Jr Executive</Text>
+              <Text style={headStyles.popularName}>Burger King</Text>
+            </View>
+            <View style={headStyles.popularHeadDetails}>
+              <Text style={headStyles.popularNameText}>$96,000/y</Text>
+              <Text style={headStyles.popularName}>Los Angels, US</Text>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
     </View>
-  
+
   )
 }
 
 const headStyles = StyleSheet.create({
   homeContainer: {
     flex: 1,
+    margin: 15,
   },
   headDetails: {
     flexDirection: 'row',
@@ -81,6 +162,10 @@ const headStyles = StyleSheet.create({
     fontWeight: "200",
     opacity: 0.7,
   },
+  headImage: {
+    width: 70,
+    height: 70,
+  },
   searchBar: {
     paddingTop: 10,
     paddingRight: 20,
@@ -88,7 +173,7 @@ const headStyles = StyleSheet.create({
     paddingBottom: 10,
     color: 'gray',
     fontSize: 19,
-    fontWeight: "100",  
+    fontWeight: "100",
   },
   headSearch: {
     flexDirection: 'row',
@@ -134,6 +219,62 @@ const headStyles = StyleSheet.create({
     fontWeight: '100',
     color: "gray",
     fontSize: 16
-  }
+  },
+  jobContainer: {
+    backgroundColor: '#5386E4',
+    borderRadius: 36,
+    padding: 40,
+    marginVertical: 30,
+    margin: 2,
+  },
+  jobName: {
+    color: 'white',
+    fontSize: 20
+  },
+  social: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "100",
+  },
+  jobDetail: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "100"
+  },
+  jobDetails: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  cardContainer: {
+    marginBottom: 80,
+    flexDirection: 'row',
+    justifyContent: "space-around"
+  },
+  imageContainer: {
+    backgroundColor: 'white',
+    width: 55,
+    borderRadius: 10,
+  },
+  socialImage: {
+    width: 30,
+    alignSelf: 'center',
+    padding: 18,
+    marginTop: 10,
+  },
+  googleContainer: {
+    alignContent: 'center',
+    marginTop: -15,
+  },
+  googleImage: {
+    marginLeft: -20,
+  },
+  popularHeadJobs: {
+    flexDirection: 'row',
+    marginVertical: 15,
+  },
+  popularJobs: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
 
 })
