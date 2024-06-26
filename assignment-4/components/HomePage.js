@@ -53,7 +53,7 @@ export default function HomePage() {
           </View>
         </View>
 
-        <View style={headStyles.jobContainer}>
+        <View style={headStyles.jobsContainer}>
           <View style={headStyles.cardContainer}>
             <View style={headStyles.googleContainer}>
               <Image source={require('../assets/google.png')} style={headStyles.googleImage} />
@@ -107,10 +107,10 @@ export default function HomePage() {
         </View>
 
         <View style={headStyles.popularHeadJobs}>
-          <Image source={require('../assets/Group.png')} />
+          <Image source={require('../assets/image 8.png')} />
           <View style={headStyles.popularJobs}>
             <View style={headStyles.popularHeadText}>
-              <Text Style={headStyles.popularHeadName}>Jr Executive</Text>
+              <Text Style={headStyles.popularHeadName}>Product Manager</Text>
               <Text style={headStyles.popularName}>Burger King</Text>
             </View>
             <View style={headStyles.popularHeadDetails}>
@@ -227,6 +227,13 @@ const headStyles = StyleSheet.create({
     marginVertical: 30,
     margin: 2,
   },
+  jobsContainer: {
+    backgroundColor: '#041E42',
+    borderRadius: 36,
+    padding: 40,
+    marginVertical: 30,
+    margin: 2,
+  },
   jobName: {
     color: 'white',
     fontSize: 20
@@ -271,10 +278,18 @@ const headStyles = StyleSheet.create({
   popularHeadJobs: {
     flexDirection: 'row',
     marginVertical: 15,
+    gap: 15,
   },
   popularJobs: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  popularHeadText: {
+    justifyContent: "space-between",
+  },
+  popularHeadName: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
 
 })
