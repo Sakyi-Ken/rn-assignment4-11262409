@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TextInput, ScrollView, TouchableOpacity } from 'react-native';
-//import {SearchBar} from 'react-native-elements';
+import {SearchBar} from 'react-native-elements';
+import { Card } from 'react-native-paper';
 import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function HomePage() {
@@ -26,11 +27,23 @@ export default function HomePage() {
         </TouchableOpacity>
       </View>
 
-      {/*       
+             
        <SearchBar
         placeholder="Search a job or position."
+        lightTheme
+        round
+        onChangeText={() => {
+          console.log('searching')
+        }}
+        onClearText={() => {
+          
+        }}
+        icon={{ type: 'font-awesome', name: 'search' }}
+        inputStyle={{ backgroundColor: 'white' }}
+        containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 15, borderColor: '#eee' }}
+
       /> 
-      */}
+      
       <View style={headStyles.headJobs}>
         <Text style={headStyles.headTitle}>Featured Jobs</Text>
         <Text style={headStyles.headSee}>See all</Text>
@@ -84,6 +97,19 @@ export default function HomePage() {
             <Text style={headStyles.jobDetail}>Accra, Ghana</Text>
           </View>
         </View>
+        <Card>
+          <Card.Title title="Card Title" subtitle="Card Subtitle" />
+          <Card.Content>
+            <Text>
+              Card content
+            </Text>
+          </Card.Content>
+          <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+          <Card.Actions>
+            <Button>Cancel</Button>
+            <Button>Ok</Button>
+          </Card.Actions>
+        </Card>
       </ScrollView>
 
       <View style={headStyles.headJobs}>
